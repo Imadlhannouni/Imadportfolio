@@ -1,247 +1,570 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
-  <title>CV – Imad Lhannouni</title>
   <meta charset="UTF-8" />
+  <title>Prénom Nom – CV</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="CV de Imad Lhannouni – DevOps | SRE | Cloud Engineering" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/favicon.svg">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="CV de Prénom Nom : Poste ciblé, compétences, expériences, projets, formation." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://exemple.com/cv.html" />
+  <meta property="og:title" content="Prénom Nom – CV" />
+  <meta property="og:description" content="Profil, expériences, projets et compétences." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://exemple.com/cv.html" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Palette et base -->
   <style>
-    html{scroll-behavior:smooth}
-    body{background:#0a0f1a;color:#e5e7eb;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica Neue,Arial,sans-serif}
-    .glass{backdrop-filter:saturate(180%) blur(10px);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1)}
-    .gradient-text{background:linear-gradient(90deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .link-underline{position:relative}
-    .link-underline:after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:currentColor;transition:width .25s}
-    .link-underline:hover:after{width:100%}
-    .ring-focus:focus{outline:none;box-shadow:0 0 0 4px rgba(99,102,241,.35)}
-  </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const path = location.pathname.split('/').pop();
-      document.querySelectorAll('nav a').forEach(a => { if(a.getAttribute('href') === path) a.classList.add('text-white'); });
-    });
-    function setLang(lang){
-      document.getElementById('cv-fr').style.display = lang==='fr'?'' :'none';
-      document.getElementById('cv-en').style.display = lang==='en'?'' :'none';
+    :root {
+      --font-sans: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Open Sans",sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      --c-bg: #ffffff;
+      --c-bg-alt:#f7f9fb;
+      --c-txt:#222;
+      --c-accent:#0d6efd;
+      --c-accent-hover:#0b5ed7;
+      --c-border:#d9e1e8;
+      --c-muted:#555;
+      --c-tag-bg:#eef4ff;
+      --c-tag-txt:#0d47a1;
+      --c-danger:#b00020;
+      --shadow-sm:0 2px 4px rgba(0,0,0,0.06);
+      --radius:10px;
+      --line-height:1.38;
     }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --c-bg:#121417;
+        --c-bg-alt:#1d2228;
+        --c-txt:#eceff4;
+        --c-accent:#4dabf7;
+        --c-accent-hover:#339af0;
+        --c-border:#2c343c;
+        --c-muted:#97a1ab;
+        --c-tag-bg:#243447;
+        --c-tag-txt:#9dc4ff;
+        --shadow-sm:0 2px 6px rgba(0,0,0,0.5);
+      }
+      img, svg { filter: none; }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin:0;
+      font-family:var(--font-sans);
+      background:var(--c-bg);
+      color:var(--c-txt);
+      -webkit-font-smoothing:antialiased;
+      line-height:var(--line-height);
+      font-size:16px;
+    }
+    a {
+      color:var(--c-accent);
+      text-decoration:none;
+    }
+    a:hover,a:focus { text-decoration:underline; color:var(--c-accent-hover); }
+    h1,h2,h3 { line-height:1.15; margin:0 0 .6em; font-weight:600; }
+    h1 { font-size:clamp(1.9rem,2.6vw,2.4rem); }
+    h2 { font-size:1.35rem; letter-spacing:.5px; text-transform:uppercase; font-weight:700; }
+    h3 { font-size:1.05rem; }
+    p { margin:0 0 0.85em; }
+    ul { margin:0 0 1em; padding:0 0 0 1.1em; }
+    li { margin:0 0 .4em; }
+    .page {
+      max-width:1080px;
+      margin:0 auto;
+      padding:40px 28px 80px;
+    }
+    header {
+      display:grid;
+      gap:24px;
+      grid-template-columns:1fr minmax(180px,230px);
+      align-items:start;
+      margin-bottom:38px;
+    }
+    @media (max-width:780px) {
+      header { grid-template-columns:1fr; }
+    }
+    .identity h1 span.role {
+      display:block;
+      font-size:clamp(.9rem,1.4vw,1.05rem);
+      font-weight:500;
+      color:var(--c-muted);
+      margin-top:.25em;
+      letter-spacing:.5px;
+    }
+    .contact {
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      font-size:.9rem;
+      background:var(--c-bg-alt);
+      padding:16px 18px;
+      border:1px solid var(--c-border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-sm);
+    }
+    .contact a { word-break:break-all; }
+    .actions {
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      background:var(--c-accent);
+      color:#fff;
+      padding:8px 14px;
+      border-radius:6px;
+      font-size:.85rem;
+      font-weight:500;
+      letter-spacing:.3px;
+      border:1px solid var(--c-accent);
+      cursor:pointer;
+      transition:.2s;
+    }
+    .btn.outline {
+      background:transparent;
+      color:var(--c-accent);
+    }
+    .btn:hover,.btn:focus {
+      background:var(--c-accent-hover);
+      color:#fff;
+      text-decoration:none;
+    }
+    .btn.outline:hover,.btn.outline:focus {
+      background:var(--c-accent);
+      color:#fff;
+    }
+    section {
+      margin-bottom:45px;
+      position:relative;
+    }
+    section:last-of-type { margin-bottom:0; }
+    .section-header {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin:0 0 14px;
+    }
+    .section-header h2 {
+      margin:0;
+      background:linear-gradient(90deg,var(--c-accent),var(--c-accent-hover));
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+    .item {
+      padding:14px 18px 16px;
+      background:var(--c-bg-alt);
+      border:1px solid var(--c-border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-sm);
+      margin-bottom:14px;
+    }
+    .item:last-child { margin-bottom:0; }
+    .item-header {
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px 14px;
+      align-items:baseline;
+      margin:0 0 6px;
+    }
+    .item-header h3 { margin:0; font-weight:600; }
+    .badge {
+      display:inline-block;
+      background:var(--c-tag-bg);
+      color:var(--c-tag-txt);
+      font-size:.65rem;
+      padding:3px 7px 4px;
+      border-radius:999px;
+      letter-spacing:.5px;
+      text-transform:uppercase;
+      font-weight:600;
+      vertical-align:middle;
+      white-space:nowrap;
+    }
+    .meta {
+      font-size:.72rem;
+      letter-spacing:.5px;
+      text-transform:uppercase;
+      color:var(--c-muted);
+      font-weight:600;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:0 0 6px;
+    }
+    .desc { font-size:.9rem; }
+    .tags {
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:10px;
+    }
+    .tag {
+      font-size:.62rem;
+      letter-spacing:.5px;
+      background:var(--c-tag-bg);
+      color:var(--c-tag-txt);
+      padding:4px 8px 5px;
+      border-radius:6px;
+      font-weight:600;
+      text-transform:uppercase;
+    }
+    .grid-2 {
+      display:grid;
+      gap:16px;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    }
+    .skills-cats {
+      display:grid;
+      gap:14px;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    }
+    .skill-cat {
+      padding:14px 16px;
+      border:1px solid var(--c-border);
+      background:var(--c-bg-alt);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-sm);
+    }
+    .skill-cat h3 {
+      margin:0 0 8px;
+      font-size:.8rem;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:var(--c-muted);
+    }
+    .skill-list {
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .skill-list span {
+      background:var(--c-tag-bg);
+      color:var(--c-tag-txt);
+      font-size:.62rem;
+      padding:4px 8px 5px;
+      border-radius:999px;
+      font-weight:600;
+      letter-spacing:.5px;
+      text-transform:uppercase;
+    }
+    .timeline-line {
+      position:absolute;
+      left:4px;
+      top:4px;
+      bottom:4px;
+      width:2px;
+      background:linear-gradient(var(--c-border),transparent 70%);
+      pointer-events:none;
+      opacity:.5;
+    }
+    .print-note {
+      font-size:.65rem;
+      color:var(--c-muted);
+      margin-top:6px;
+      text-align:right;
+    }
+    footer {
+      margin-top:70px;
+      font-size:.65rem;
+      text-align:center;
+      color:var(--c-muted);
+    }
+    /* Impression */
+    @media print {
+      :root {
+        --c-bg:#ffffff;
+        --c-bg-alt:#ffffff;
+        --c-border:#bbbbbb;
+        --c-txt:#000;
+        --c-accent:#000;
+        --c-accent-hover:#000;
+        --shadow-sm:none;
+      }
+      body { font-size:11.2pt; }
+      .page { max-width:none; padding:0 14mm 0; }
+      header { grid-template-columns:1fr 240px; margin-bottom:18px; }
+      .actions, .print-note, .timeline-line { display:none !important; }
+      a { color:#000; text-decoration:none; }
+      .btn { display:none !important; }
+      section { break-inside:avoid; }
+      .item { break-inside:avoid; page-break-inside:avoid; }
+      footer { margin-top:20px; }
+    }
+  </style>
+
+  <!-- Données structurées JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Prénom Nom",
+    "jobTitle":"Titre / Poste ciblé",
+    "url":"https://exemple.com/cv.html",
+    "sameAs":[
+      "https://www.linkedin.com/in/votreprofil",
+      "https://github.com/votreprofil"
+    ],
+    "email":"mailto:prenom.nom@example.com",
+    "address": {
+      "@type":"PostalAddress",
+      "addressLocality":"Ville",
+      "addressCountry":"FR"
+    },
+    "knowsAbout":["Développement web","Architecture logicielle","CI/CD"]
+  }
   </script>
 </head>
 <body>
-<header class="sticky top-0 z-40">
-  <div class="glass">
-    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-      <a href="index.html" class="font-semibold tracking-tight text-zinc-100">Imad<span class="text-zinc-400">.dev</span></a>
-      <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-300">
-        <a href="about.html" class="link-underline">À propos</a>
-        <a href="experience.html" class="link-underline">Expérience</a>
-        <a href="projects.html" class="link-underline">Projets</a>
-        <a href="cv.html" class="link-underline">CV</a>
-        <a href="contact.html" class="link-underline">Contact</a>
-        <a href="https://github.com/Imadlhannouni" target="_blank" rel="noreferrer" class="link-underline">GitHub</a>
-      </nav>
-      <div class="flex items-center gap-3">
-        <button onclick="setLang('fr')" class="outline-none"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" width="28" height="18" alt="FR"></button>
-        <button onclick="setLang('en')" class="outline-none"><img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="28" height="18" alt="EN"></button>
-        <a href="assets/cv.pdf" class="hidden md:inline-flex ring-focus rounded-2xl px-4 py-2 text-sm font-medium bg-white/10 hover:bg-white/20">PDF</a>
-      </div>
-    </div>
-  </div>
-</header>
-<main class="mx-auto max-w-5xl px-4 py-12">
-  <!-- CV Français -->
-  <div id="cv-fr">
-    <h1 class="text-3xl md:text-4xl font-bold">Curriculum Vitae</h1>
-    <p class="mt-2 text-zinc-400 text-sm">Dernière mise à jour: <span id="maj-fr"></span></p>
-    <section class="mt-8 grid md:grid-cols-3 gap-8">
-      <div class="md:col-span-2 space-y-10">
-        <div>
-          <h2 class="text-xl font-semibold gradient-text">Profil</h2>
-          <p class="mt-3 text-zinc-300">Étudiant en Software Engineering @1337 (42). Passionné par l'automatisation, la fiabilité et le déploiement d'infrastructures cloud scalables.</p>
-        </div>
-        <div>
-          <h2 class="text-xl font-semibold gradient-text">Expérience</h2>
-          <div class="mt-4 space-y-6">
-            <div>
-              <h3 class="font-medium">Projets 42 & Labs</h3>
-              <p class="text-xs text-zinc-400">2024 – Présent</p>
-              <ul class="mt-2 text-sm list-disc list-inside text-zinc-300 space-y-1">
-                <li>Pipelines CI/CD (GitHub Actions), conteneurisation Docker.</li>
-                <li>Observabilité : Prometheus, Grafana, Loki, alerting.</li>
-                <li>Automatisation & scripts systèmes (Bash, Python).</li>
-              </ul>
-            </div>
-            <div>
-              <h3 class="font-medium">Projets Freelance (prototype)</h3>
-              <p class="text-xs text-zinc-400">2025 – Présent</p>
-              <ul class="mt-2 text-sm list-disc list-inside text-zinc-300 space-y-1">
-                <li>Infra as Code (Terraform) sur AWS.</li>
-                <li>Déploiements GitOps avec ArgoCD.</li>
-                <li>Optimisation coûts & monitoring.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h2 class="text-xl font-semibold gradient-text">Éducation</h2>
-          <div class="mt-4">
-            <p class="font-medium">École 1337 (Réseau 42)</p>
-            <p class="text-xs text-zinc-400">Software Engineering – 2024 →</p>
-            <p class="mt-2 text-sm text-zinc-300">Piscine C, Shell, algorithmie, projets systèmes & réseau.</p>
-          </div>
-        </div>
-        <div>
-          <h2 class="text-xl font-semibold gradient-text">Projets Clés</h2>
-          <ul class="mt-3 text-sm text-zinc-300 list-disc list-inside space-y-1">
-            <li>Pipeline CI/CD multi-étapes avec cache & build matrix.</li>
-            <li>Cluster EKS Terraform + autoscaling + monitoring.</li>
-            <li>Stack observabilité (Prometheus/Grafana/Loki) avec SLO.</li>
-          </ul>
+  <div class="page" id="top">
+    <header aria-labelledby="cv-title">
+      <div class="identity">
+        <h1 id="cv-title">Prénom Nom <span class="role">Titre / Spécialité</span></h1>
+        <p>
+          Brève phrase d’accroche (profil / proposition de valeur). Ex: Ingénieur logiciel spécialisé en applications web scalables orientées performance et DX.
+        </p>
+        <div class="actions" aria-label="Actions">
+          <a class="btn" href="documents/cv-prenom-nom.pdf" download>
+            <!-- Icône simple -->
+            <span aria-hidden="true">⬇</span> Télécharger PDF
+          </a>
+          <button class="btn outline" onclick="window.print()">
+            <span aria-hidden="true">🖨</span> Imprimer
+          </button>
+          <a class="btn outline" href="#contact">Contacter</a>
         </div>
       </div>
-      <aside class="space-y-8">
-        <div>
-          <h2 class="text-sm font-semibold tracking-wide text-zinc-400">CONTACT</h2>
-            <ul class="mt-3 text-sm space-y-1 text-zinc-300">
-              <li>Email: <a class="link-underline" href="mailto:lhannouni05@gmail.com">lhannouni05@gmail.com</a></li>
-              <li>GitHub: <a class="link-underline" href="https://github.com/Imadlhannouni" target="_blank">Imadlhannouni</a></li>
-              <li>LinkedIn: <a class="link-underline" href="https://www.linkedin.com/in/imad-lhannouni-b2429a340/" target="_blank">Profil</a></li>
-              <li>Localisation: Maroc (Remote)</li>
-            </ul>
-        </div>
-        <div>
-          <h2 class="text-sm font-semibold tracking-wide text-zinc-400">COMPÉTENCES</h2>
-          <ul class="mt-3 text-sm text-zinc-300 space-y-1">
-            <li>Cloud: AWS (EKS, IAM, S3)</li>
-            <li>Infra: Terraform, Ansible (bases)</li>
-            <li>Conteneurs: Docker, Kubernetes</li>
-            <li>CI/CD: GitHub Actions, GitOps (ArgoCD)</li>
-            <li>Observabilité: Grafana, Prometheus, Loki</li>
-            <li>Langages: C, Bash, Python (bases)</li>
-            <li>Versioning: Git / GitHub</li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="text-sm font-semibold tracking-wide text-zinc-400">CERTIFICATIONS (cibles)</h2>
-          <ul class="mt-3 text-sm text-zinc-300 space-y-1">
-            <li>AWS Certified (préparation)</li>
-            <li>CKA / Terraform Associate (objectif)</li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="text-sm font-semibold tracking-wide text-zinc-400">LANGUES</h2>
-          <p class="mt-3 text-sm text-zinc-300">Français (natif), Anglais (professionnel).</p>
-        </div>
+      <aside class="contact" id="contact" aria-label="Informations de contact">
+        <strong style="font-size:.78rem;letter-spacing:1px;text-transform:uppercase;color:var(--c-muted);">Contact</strong>
+        <span>📍 Ville, Pays (remote possible)</span>
+        <a href="mailto:prenom.nom@example.com">prenom.nom@example.com</a>
+        <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+        <a href="https://www.linkedin.com/in/votreprofil" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="https://github.com/votreprofil" rel="noopener" target="_blank">GitHub</a>
+        <a href="https://portfolio.exemple.com" rel="noopener" target="_blank">Portfolio</a>
+        <div class="print-note">Dernière mise à jour : <span id="last-update"></span></div>
       </aside>
-    </section>
+    </header>
+
+    <main>
+      <!-- Profil -->
+      <section aria-labelledby="profil-title">
+        <div class="section-header">
+          <h2 id="profil-title">Profil</h2>
+        </div>
+        <div class="item" style="margin-bottom:0;">
+          <p class="desc">
+            Résumé plus complet (4–6 lignes). Expliquer spécialités clés, types de projets menés, stack de prédilection, impact, approche (qualité, mentorat, delivery, optimisation).
+          </p>
+          <div class="tags" aria-label="Mots-clés">
+            <span class="tag">Full-Stack</span>
+            <span class="tag">Architecture</span>
+            <span class="tag">Cloud</span>
+            <span class="tag">Performance</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Expériences -->
+      <section aria-labelledby="exp-title">
+        <div class="section-header">
+          <h2 id="exp-title">Expériences</h2>
+        </div>
+        <div class="timeline-line" aria-hidden="true"></div>
+
+        <article class="item" aria-labelledby="exp1-title">
+          <div class="item-header">
+            <h3 id="exp1-title">Senior Software Engineer – Entreprise X</h3>
+            <span class="badge">CDI</span>
+          </div>
+            <div class="meta">
+              <span>2022–Présent</span>
+              <span>Paris / Remote</span>
+              <span>Tech Lead partiel</span>
+            </div>
+          <p class="desc">
+            Responsable de la refonte d’une plateforme B2B (microservices + front moderne). Mise en place de pipelines CI/CD, observabilité, réduction du temps de build de 40%, amélioration TTFB de 30%.
+          </p>
+          <ul>
+            <li>Conception architecture microservices orientée événements (Kafka + gRPC).</li>
+            <li>Migration legacy monolith → modules découplés avec feature toggles.</li>
+            <li>Mise en place observabilité (OpenTelemetry, dashboards SLO).</li>
+            <li>Mentorat de 5 développeurs juniors (revues structurées / pair programming).</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">React</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Kafka</span>
+            <span class="tag">Docker</span>
+            <span class="tag">K8s</span>
+            <span class="tag">CI/CD</span>
+          </div>
+        </article>
+
+        <article class="item" aria-labelledby="exp2-title">
+          <div class="item-header">
+            <h3 id="exp2-title">Ingénieur Logiciel – Startup Y</h3>
+            <span class="badge">CDI</span>
+          </div>
+          <div class="meta">
+            <span>2020–2022</span>
+            <span>Lyon</span>
+            <span>Scale-up</span>
+          </div>
+          <p class="desc">
+            Développement d’un SaaS analytique temps réel. Amélioration du throughput ~3x via optimisation d’index et batching d’événements.
+          </p>
+          <ul>
+            <li>Implémentation data pipeline (ETL léger) avec files distribuées.</li>
+            <li>Refonte UI réactive + composant design system.</li>
+            <li>Tests end-to-end autom. (Playwright) couvrant parcours critique.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Go</span>
+            <span class="tag">Vue.js</span>
+            <span class="tag">Redis</span>
+            <span class="tag">gRPC</span>
+            <span class="tag">Elastic</span>
+          </div>
+        </article>
+      </section>
+
+      <!-- Projets -->
+      <section aria-labelledby="proj-title">
+        <div class="section-header">
+          <h2 id="proj-title">Projets Sélectionnés</h2>
+        </div>
+        <div class="grid-2">
+          <article class="item" aria-labelledby="proj1-title">
+            <div class="item-header">
+              <h3 id="proj1-title">Optimiseur d’Index SQL</h3>
+              <span class="badge">Open Source</span>
+            </div>
+            <p class="desc">
+              Analyse statique & heuristique des plans d’exécution pour suggérer des index composites. Gains de 25–60% sur queries lourdes.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">AST</span>
+            </div>
+          </article>
+          <article class="item" aria-labelledby="proj2-title">
+            <div class="item-header">
+              <h3 id="proj2-title">Dashboard Perf Front</h3>
+              <span class="badge">Side</span>
+            </div>
+            <p class="desc">
+              Collecte RUM + agrégation Web Vitals + alerting SLO Slack. Permet priorisation factuelle des actions UX.
+            </p>
+            <div class="tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">Web Vitals</span>
+              <span class="tag">Grafana</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Compétences -->
+      <section aria-labelledby="skills-title">
+        <div class="section-header">
+          <h2 id="skills-title">Compétences</h2>
+        </div>
+        <div class="skills-cats">
+          <div class="skill-cat">
+            <h3>Langages</h3>
+            <div class="skill-list">
+              <span>TypeScript</span><span>Go</span><span>Python</span><span>SQL</span><span>Rust (base)</span>
+            </div>
+          </div>
+            <div class="skill-cat">
+            <h3>Front & UI</h3>
+            <div class="skill-list">
+              <span>React</span><span>Next.js</span><span>Vue</span><span>Performances</span><span>Design System</span>
+            </div>
+          </div>
+          <div class="skill-cat">
+            <h3>Back & Data</h3>
+            <div class="skill-list">
+              <span>Node.js</span><span>gRPC</span><span>Kafka</span><span>CQRS</span><span>Event Sourcing</span>
+            </div>
+          </div>
+          <div class="skill-cat">
+            <h3>Infra & Ops</h3>
+            <div class="skill-list">
+              <span>Docker</span><span>Kubernetes</span><span>CI/CD</span><span>Observabilité</span><span>Terraform</span>
+            </div>
+          </div>
+          <div class="skill-cat">
+            <h3>Qualité</h3>
+            <div class="skill-list">
+              <span>TDD</span><span>Code Review</span><span>Security Basics</span><span>Refactoring</span>
+            </div>
+          </div>
+          <div class="skill-cat">
+            <h3>Soft Skills</h3>
+            <div class="skill-list">
+              <span>Leadership</span><span>Mentorat</span><span>Communication</span><span>Ownership</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formation -->
+      <section aria-labelledby="edu-title">
+        <div class="section-header">
+          <h2 id="edu-title">Formation</h2>
+        </div>
+        <article class="item" aria-labelledby="edu1-title">
+          <div class="item-header">
+            <h3 id="edu1-title">Diplôme / Master – École / Université</h3>
+            <span class="badge">2017–2020</span>
+          </div>
+          <p class="desc">Spécialisation en ... Mémoire sur ...</p>
+        </article>
+      </section>
+
+      <!-- Langues / Divers -->
+      <section aria-labelledby="extra-title">
+        <div class="section-header">
+          <h2 id="extra-title">Langues & Divers</h2>
+        </div>
+        <div class="grid-2">
+          <div class="item">
+            <h3 style="margin-top:0;">Langues</h3>
+            <ul>
+              <li>Français : natif</li>
+              <li>Anglais : C1 (TOEIC 9xx)</li>
+              <li>Espagnol : B1</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h3 style="margin-top:0;">Intérêts</h3>
+            <p>Open source, optimisation systèmes, trail, photographie, pédagogie technique.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Prénom Nom — CV généré statiquement. |
+      <a href="#top">Haut de page</a>
+    </footer>
   </div>
 
-  <!-- CV English -->
-  <div id="cv-en" style="display:none">
-    <h1 class="text-3xl md:text-4xl font-bold">Curriculum Vitae</h1>
-    <p class="mt-2 text-zinc-400 text-sm">Last update: <span id="maj-en"></span></p>
-    <section class="mt-8 grid md:grid-cols-3 gap-8">
-      <div class="md:col-span-2 space-y-10">
-        <div>
-          <h2 class="text-xl font-semibold gradient-text">Profile</h2>
-          <p class="mt-3 text-zinc-300">Software Engineering student @1337 (42). Passionate about automation, reliability and deploying scalable cloud infrastructure.</p>
-        </div>
-        <div>
-          <h2 class="text-xl font-semibold gradient-text">Experience</h2>
-          <div class="mt-4 space-y-6">
-            <div>
-              <h3 class="font-medium">42 Projects & Labs</h3>
-              <p class="text-xs text-zinc-400">2024 – Present</p>
-              <ul class="mt-2 text-sm list-disc list-inside text-zinc-300 space-y-1">
-                <li>CI/CD pipelines (GitHub Actions), Docker containerization.</li>
-                <li>Observability: Prometheus, Grafana, Loki, alerting.</li>
-                <li>Automation & system scripts (Bash, Python).</li>
-              </ul>
-            </div>
-            <div>
-              <h3 class="font-medium">Freelance Projects (prototype)</h3>
-              <p class="text-xs text-zinc-400">2025 – Present</p>
-              <ul class="mt-2 text-sm list-disc list-inside text-zinc-300 space-y-1">
-                <li>Infra as Code (Terraform) on AWS.</li>
-                <li>GitOps deployments with ArgoCD.</li>
-                <li>Cost optimization & monitoring.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h2 class="text-xl font-semibold gradient-text">Education</h2>
-          <div class="mt-4">
-            <p class="font-medium">1337 School (42 Network)</p>
-            <p class="text-xs text-zinc-400">Software Engineering – 2024 →</p>
-            <p class="mt-2 text-sm text-zinc-300">C piscine, shell, algorithms, systems & networking projects.</p>
-          </div>
-        </div>
-        <div>
-          <h2 class="text-xl font-semibold gradient-text">Key Projects</h2>
-          <ul class="mt-3 text-sm text-zinc-300 list-disc list-inside space-y-1">
-            <li>Multi-stage CI/CD pipeline with cache & build matrix.</li>
-            <li>Terraform EKS cluster + autoscaling + monitoring.</li>
-            <li>Observability stack (Prometheus/Grafana/Loki) with SLOs.</li>
-          </ul>
-        </div>
-      </div>
-      <aside class="space-y-8">
-        <div>
-          <h2 class="text-sm font-semibold tracking-wide text-zinc-400">CONTACT</h2>
-            <ul class="mt-3 text-sm space-y-1 text-zinc-300">
-              <li>Email: <a class="link-underline" href="mailto:lhannouni05@gmail.com">lhannouni05@gmail.com</a></li>
-              <li>GitHub: <a class="link-underline" href="https://github.com/Imadlhannouni" target="_blank">Imadlhannouni</a></li>
-              <li>LinkedIn: <a class="link-underline" href="https://www.linkedin.com/in/imad-lhannouni-b2429a340/" target="_blank">Profile</a></li>
-              <li>Location: Morocco (Remote)</li>
-            </ul>
-        </div>
-        <div>
-          <h2 class="text-sm font-semibold tracking-wide text-zinc-400">SKILLS</h2>
-          <ul class="mt-3 text-sm text-zinc-300 space-y-1">
-            <li>Cloud: AWS (EKS, IAM, S3)</li>
-            <li>Infra: Terraform, Ansible (basics)</li>
-            <li>Containers: Docker, Kubernetes</li>
-            <li>CI/CD: GitHub Actions, GitOps (ArgoCD)</li>
-            <li>Observability: Grafana, Prometheus, Loki</li>
-            <li>Languages: C, Bash, Python (basics)</li>
-            <li>Versioning: Git / GitHub</li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="text-sm font-semibold tracking-wide text-zinc-400">CERTIFICATIONS (targets)</h2>
-          <ul class="mt-3 text-sm text-zinc-300 space-y-1">
-            <li>AWS Certified (in progress)</li>
-            <li>CKA / Terraform Associate (goal)</li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="text-sm font-semibold tracking-wide text-zinc-400">LANGUAGES</h2>
-          <p class="mt-3 text-sm text-zinc-300">French (native), English (professional).</p>
-        </div>
-      </aside>
-    </section>
-  </div>
-</main>
-<footer class="border-t border-white/5">
-  <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-400 flex flex-col md:flex-row items-center justify-between gap-2">
-    <p>© <span id="year"></span> Imad Lhannouni.</p>
-    <div class="flex items-center gap-3">
-      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="link-underline">Haut / Top</a>
-      <span>·</span>
-      <a href="https://www.linkedin.com/in/imad-lhannouni-b2429a340/" target="_blank" rel="noreferrer" class="link-underline">LinkedIn</a>
-    </div>
-  </div>
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    const d = new Date().toLocaleDateString('fr-FR');
-    document.getElementById('maj-fr').textContent = d;
-    document.getElementById('maj-en').textContent = new Date().toLocaleDateString('en-GB');
+    // Mise à jour dates dynamiques
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('last-update').textContent = new Date().toLocaleDateString('fr-FR');
   </script>
-</footer>
 </body>
 </html>

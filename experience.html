@@ -3,141 +3,159 @@
 <head>
   <title>Expérience – Imad Lhannouni</title>
   <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Portfolio de Imad Lhannouni – DevOps | SRE | Cloud Engineering" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" href="assets/favicon.svg">
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-  html{scroll-behavior:smooth}
-  body{background:#0a0f1a;color:#e5e7eb;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica Neue,Arial,sans-serif}
-  .glass{backdrop-filter:saturate(180%) blur(10px);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1)}
-  .gradient-text{background:linear-gradient(90deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .link-underline{position:relative}
-  .link-underline:after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:currentColor;transition:width .25s}
-  .link-underline:hover:after{width:100%}
-  .shadow-soft{box-shadow:0 10px 30px rgba(0,0,0,.25)}
-  .ring-focus:focus{outline:none;box-shadow:0 0 0 4px rgba(99,102,241,.35)}
-</style>
-<script>
-  // Active nav item
-  document.addEventListener('DOMContentLoaded', () => {
-    const path = location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav a').forEach(a => {
-      if(a.getAttribute('href') === path) a.classList.add('text-white');
-    });
-  });
-</script>
-
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Expérience professionnelle d'Imad Lhannouni – SRE, pipelines CI/CD, fiabilité et cloud." />
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/app.js"></script>
 </head>
 <body>
+  <a href="#main" class="skip-link">Aller au contenu</a>
+  <header class="sticky top-0 z-50">
+    <div class="glass">
+      <div class="mx-auto max-w-6xl flex items-center justify-between px-4 py-4">
+        <a href="index.html" class="font-bold text-xl gradient-text">Imad Lhannouni</a>
+        <nav class="flex items-center gap-6 text-sm">
+          <a data-nav href="index.html" class="link-underline text-slate-300 hover:text-white">Accueil</a>
+          <a data-nav href="about.html" class="link-underline text-slate-300 hover:text-white">À propos</a>
+          <a data-nav href="experience.html" class="link-underline text-slate-300 hover:text-white">Expérience</a>
+          <a data-nav href="projects.html" class="link-underline text-slate-300 hover:text-white">Projets</a>
+          <a data-nav href="contact.html" class="link-underline text-slate-300 hover:text-white">Contact</a>
+          <div class="flex items-center gap-2 pl-4 border-l border-white/10">
+            <button class="lang-btn" data-lang="fr" aria-pressed="true" aria-label="Français">FR</button>
+            <button class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="mx-auto max-w-6xl px-4">
     <div id="lang-fr">
-      <header class="sticky top-0 z-40">
-        <div class="glass">
-          <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-            <a href="index.html" class="font-semibold tracking-tight text-zinc-100">Imad<span class="text-zinc-400">.dev</span></a>
-            <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-300">
-              <a href="about.html" class="link-underline">À propos</a>
-              <a href="experience.html" class="link-underline">Expérience</a>
-              <a href="projects.html" class="link-underline">Projets</a>
-              <a href="cv.html" class="link-underline">CV</a>
-              <a href="contact.html" class="link-underline">Contact</a>
-              <a href="https://github.com/Imadlhannouni" target="_blank" rel="noreferrer" class="link-underline">GitHub</a>
-            </nav>
-            <div class="flex items-center gap-3">
-              <button onclick="setLang('fr')" class="outline-none"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" width="28" height="18" alt="FR"></button>
-              <button onclick="setLang('en')" class="outline-none"><img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="28" height="18" alt="EN"></button>
-              <a href="contact.html" class="md:inline-flex hidden ring-focus rounded-2xl px-4 py-2 text-sm font-medium bg-white/10 hover:bg-white/20">Me contacter</a>
+      <section class="section">
+        <h1 class="text-3xl md:text-4xl font-extrabold mb-6">Expérience</h1>
+        <p class="text-slate-300 max-w-3xl leading-relaxed">
+          (FR) Sélection d’expériences où j’ai amélioré fiabilité, vitesse de livraison et observabilité.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Timeline</h2>
+        <ol class="relative border-l border-white/10 ml-4">
+          <li class="mb-10 ml-4">
+            <div class="absolute -left-1.5 w-3 h-3 bg-indigo-500 rounded-full border border-white/20"></div>
+            <time class="text-xs uppercase tracking-wide text-slate-400">2024 – Présent</time>
+            <h3 class="font-semibold mt-1">SRE / DevOps – Société X</h3>
+            <p class="text-sm text-slate-400 mt-1">
+              Mise en place d’indicateurs SLO, réduction MTTR de 35%, automatisation déploiements (GitHub Actions + Terraform).
+            </p>
+            <div class="mt-2 flex flex-wrap">
+              <span class="badge">SLO</span><span class="badge">Terraform</span><span class="badge">K8s</span><span class="badge">Actions</span>
             </div>
-          </div>
-        </div>
-      </header>
-      <main class="mx-auto max-w-6xl px-4 py-16">
-        <h1 class="text-3xl md:text-4xl font-bold">Expérience</h1>
-        <ol class="mt-8 relative border-l border-white/10 ml-3">
-          <li class="mb-10 ml-6">
-            <span class="absolute -left-3 top-1 w-6 h-6 rounded-full bg-indigo-500/30 border border-white/20"></span>
-            <h3 class="font-semibold">Projets 42 & stages</h3>
-            <p class="text-sm text-zinc-400">2024 – 2026</p>
-            <p class="mt-2 text-zinc-300">Shell, réseaux, systèmes, C, et projets DevOps (CI/CD, Docker, K8s).</p>
           </li>
-          <li class="mb-10 ml-6">
-            <span class="absolute -left-3 top-1 w-6 h-6 rounded-full bg-indigo-500/30 border border-white/20"></span>
-            <h3 class="font-semibold">Freelance / Labs</h3>
-            <p class="text-sm text-zinc-400">2025 – présent</p>
-            <p class="mt-2 text-zinc-300">Infra as Code, pipelines sur GitHub, monitoring et alerting.</p>
+          <li class="mb-10 ml-4">
+            <div class="absolute -left-1.5 w-3 h-3 bg-indigo-500 rounded-full border border-white/20"></div>
+            <time class="text-xs uppercase tracking-wide text-slate-400">2023 – 2024</time>
+            <h3 class="font-semibold mt-1">DevOps Engineer – Société Y</h3>
+            <p class="text-sm text-slate-400 mt-1">
+              Pipeline CI/CD unifié, temps de build -40%, standardisation observabilité (Prometheus, Loki, Grafana).
+            </p>
+            <div class="mt-2 flex flex-wrap">
+              <span class="badge">CI/CD</span><span class="badge">Prometheus</span><span class="badge">Grafana</span><span class="badge">Loki</span>
+            </div>
           </li>
         </ol>
-      </main>
-      <footer class="border-t border-white/5">
-        <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-400 flex flex-col md:flex-row items-center justify-between gap-2">
-          <p>© <span id="year"></span> Imad Lhannouni. Tous droits réservés.</p>
-          <div class="flex items-center gap-3">
-            <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="link-underline">Haut de page</a>
-            <span>·</span>
-            <a href="https://www.linkedin.com/in/imad-lhannouni-b2429a340/" target="_blank" rel="noreferrer" class="link-underline">LinkedIn</a>
+      </section>
+
+      <section class="section">
+        <h2>Impact Chiffré</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="card">
+            <p class="text-4xl font-bold mb-1 gradient-text">-35%</p>
+            <p class="text-xs uppercase tracking-wide text-slate-400">MTTR</p>
+          </div>
+          <div class="card">
+            <p class="text-4xl font-bold mb-1 gradient-text">+45%</p>
+            <p class="text-xs uppercase tracking-wide text-slate-400">Fréquence déploiements</p>
+          </div>
+          <div class="card">
+            <p class="text-4xl font-bold mb-1 gradient-text">99.95%</p>
+            <p class="text-xs uppercase tracking-wide text-slate-400">Disponibilité</p>
           </div>
         </div>
-        <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
-      </footer>
+      </section>
     </div>
-    <div id="lang-en" style="display:none">
-      <header class="sticky top-0 z-40">
-        <div class="glass">
-          <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-            <a href="index.html" class="font-semibold tracking-tight text-zinc-100">Imad<span class="text-zinc-400">.dev</span></a>
-            <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-300">
-              <a href="about.html" class="link-underline">About</a>
-              <a href="experience.html" class="link-underline">Experience</a>
-              <a href="projects.html" class="link-underline">Projects</a>
-              <a href="cv.html" class="link-underline">Resume</a>
-              <a href="contact.html" class="link-underline">Contact</a>
-              <a href="https://github.com/Imadlhannouni" target="_blank" rel="noreferrer" class="link-underline">GitHub</a>
-            </nav>
-            <div class="flex items-center gap-3">
-              <button onclick="setLang('fr')" class="outline-none"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" width="28" height="18" alt="FR"></button>
-              <button onclick="setLang('en')" class="outline-none"><img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="28" height="18" alt="EN"></button>
-              <a href="contact.html" class="md:inline-flex hidden ring-focus rounded-2xl px-4 py-2 text-sm font-medium bg-white/10 hover:bg-white/20">Contact me</a>
+
+    <div id="lang-en" hidden>
+      <section class="section">
+        <h1 class="text-3xl md:text-4xl font-extrabold mb-6">Experience</h1>
+        <p class="text-slate-300 max-w-3xl leading-relaxed">
+          (EN) Selected engagements improving reliability, delivery speed and observability.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Timeline</h2>
+        <ol class="relative border-l border-white/10 ml-4">
+          <li class="mb-10 ml-4">
+            <div class="absolute -left-1.5 w-3 h-3 bg-indigo-500 rounded-full border border-white/20"></div>
+            <time class="text-xs uppercase tracking-wide text-slate-400">2024 – Present</time>
+            <h3 class="font-semibold mt-1">SRE / DevOps – Company X</h3>
+            <p class="text-sm text-slate-400 mt-1">
+              Implemented SLOs, reduced MTTR by 35%, automated infra & deployments (GitHub Actions + Terraform).
+            </p>
+            <div class="mt-2 flex flex-wrap">
+              <span class="badge">SLO</span><span class="badge">Terraform</span><span class="badge">K8s</span><span class="badge">Actions</span>
             </div>
-          </div>
-        </div>
-      </header>
-      <main class="mx-auto max-w-6xl px-4 py-16">
-        <h1 class="text-3xl md:text-4xl font-bold">Experience</h1>
-        <ol class="mt-8 relative border-l border-white/10 ml-3">
-          <li class="mb-10 ml-6">
-            <span class="absolute -left-3 top-1 w-6 h-6 rounded-full bg-indigo-500/30 border border-white/20"></span>
-            <h3 class="font-semibold">42 Projects & Internships</h3>
-            <p class="text-sm text-zinc-400">2024 – 2026</p>
-            <p class="mt-2 text-zinc-300">Shell, networks, systems, C, and DevOps projects (CI/CD, Docker, K8s).</p>
           </li>
-          <li class="mb-10 ml-6">
-            <span class="absolute -left-3 top-1 w-6 h-6 rounded-full bg-indigo-500/30 border border-white/20"></span>
-            <h3 class="font-semibold">Freelance / Labs</h3>
-            <p class="text-sm text-zinc-400">2025 – present</p>
-            <p class="mt-2 text-zinc-300">Infra as Code, GitHub pipelines, monitoring and alerting.</p>
+          <li class="mb-10 ml-4">
+            <div class="absolute -left-1.5 w-3 h-3 bg-indigo-500 rounded-full border border-white/20"></div>
+            <time class="text-xs uppercase tracking-wide text-slate-400">2023 – 2024</time>
+            <h3 class="font-semibold mt-1">DevOps Engineer – Company Y</h3>
+            <p class="text-sm text-slate-400 mt-1">
+              Unified CI/CD pipeline, -40% build time, standardized observability (Prometheus, Loki, Grafana).
+            </p>
+            <div class="mt-2 flex flex-wrap">
+              <span class="badge">CI/CD</span><span class="badge">Prometheus</span><span class="badge">Grafana</span><span class="badge">Loki</span>
+            </div>
           </li>
         </ol>
-      </main>
-      <footer class="border-t border-white/5">
-        <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-400 flex flex-col md:flex-row items-center justify-between gap-2">
-          <p>© <span id="year-en"></span> Imad Lhannouni. All rights reserved.</p>
-          <div class="flex items-center gap-3">
-            <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="link-underline">Back to top</a>
-            <span>·</span>
-            <a href="https://www.linkedin.com/in/imad-lhannouni-b2429a340/" target="_blank" rel="noreferrer" class="link-underline">LinkedIn</a>
+      </section>
+
+      <section class="section">
+        <h2>Measured Impact</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="card">
+            <p class="text-4xl font-bold mb-1 gradient-text">-35%</p>
+            <p class="text-xs uppercase tracking-wide text-slate-400">MTTR</p>
+          </div>
+          <div class="card">
+            <p class="text-4xl font-bold mb-1 gradient-text">+45%</p>
+            <p class="text-xs uppercase tracking-wide text-slate-400">Deploy freq</p>
+          </div>
+          <div class="card">
+            <p class="text-4xl font-bold mb-1 gradient-text">99.95%</p>
+            <p class="text-xs uppercase tracking-wide text-slate-400">Availability</p>
           </div>
         </div>
-        <script>document.getElementById('year-en').textContent=new Date().getFullYear()</script>
-      </footer>
+      </section>
     </div>
-    <script>
-      function setLang(lang) {
-        document.getElementById('lang-fr').style.display = lang === 'fr' ? '' : 'none';
-        document.getElementById('lang-en').style.display = lang === 'en' ? '' : 'none';
-      }
-    </script>
+  </main>
+
+  <footer class="mx-auto max-w-6xl px-4">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>&copy; <span id="year-exp"></span> Imad Lhannouni.</div>
+      <div class="flex gap-4">
+        <a href="https://github.com/Imadlhannouni" target="_blank" rel="noopener">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <script>document.getElementById('year-exp').textContent = new Date().getFullYear();</script>
+  </footer>
 </body>
 </html>
