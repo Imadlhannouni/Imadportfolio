@@ -33,48 +33,109 @@
 
 </head>
 <body>
-<header class="sticky top-0 z-40">
-  <div class="glass">
-    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-      <a href="index.html" class="font-semibold tracking-tight text-zinc-100">Imad<span class="text-zinc-400">.dev</span></a>
-      <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-300">
-        <a href="about.html" class="link-underline">À propos</a>
-        <a href="experience.html" class="link-underline">Expérience</a>
-        <a href="projects.html" class="link-underline">Projets</a>
-        <a href="contact.html" class="link-underline">Contact</a>
-        <a href="https://github.com/Imadlhannouni" target="_blank" rel="noreferrer" class="link-underline">GitHub</a>
-      </nav>
-      <a href="contact.html" class="md:inline-flex hidden ring-focus rounded-2xl px-4 py-2 text-sm font-medium bg-white/10 hover:bg-white/20">Me contacter</a>
+    <div id="lang-select" class="flex items-center gap-3 p-4">
+      <button onclick="setLang('fr')" style="background:none;border:none;cursor:pointer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Français" width="32" height="20" />
+      </button>
+      <button onclick="setLang('en')" style="background:none;border:none;cursor:pointer">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English" width="32" height="20" />
+      </button>
     </div>
-  </div>
-</header>
-<main class="mx-auto max-w-6xl px-4 py-16">
-  <h1 class="text-3xl md:text-4xl font-bold">Expérience</h1>
-  <ol class="mt-8 relative border-l border-white/10 ml-3">
-    <li class="mb-10 ml-6">
-      <span class="absolute -left-3 top-1 w-6 h-6 rounded-full bg-indigo-500/30 border border-white/20"></span>
-      <h3 class="font-semibold">Projets 42 & stages</h3>
-      <p class="text-sm text-zinc-400">2024 – 2026</p>
-      <p class="mt-2 text-zinc-300">Shell, réseaux, systèmes, C, et projets DevOps (CI/CD, Docker, K8s).</p>
-    </li>
-    <li class="mb-10 ml-6">
-      <span class="absolute -left-3 top-1 w-6 h-6 rounded-full bg-indigo-500/30 border border-white/20"></span>
-      <h3 class="font-semibold">Freelance / Labs</h3>
-      <p class="text-sm text-zinc-400">2025 – présent</p>
-      <p class="mt-2 text-zinc-300">Infra as Code, pipelines sur GitHub, monitoring et alerting.</p>
-    </li>
-  </ol>
-</main>
-<footer class="border-t border-white/5">
-  <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-400 flex flex-col md:flex-row items-center justify-between gap-2">
-    <p>© <span id="year"></span> Imad Lhannouni. Tous droits réservés.</p>
-    <div class="flex items-center gap-3">
-      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="link-underline">Haut de page</a>
-      <span>·</span>
-      <a href="https://www.linkedin.com/in/imad-lhannouni-b2429a340/" target="_blank" rel="noreferrer" class="link-underline">LinkedIn</a>
+    <div id="lang-fr">
+      <header class="sticky top-0 z-40">
+        <div class="glass">
+          <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="font-semibold tracking-tight text-zinc-100">Imad<span class="text-zinc-400">.dev</span></a>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-300">
+              <a href="about.html" class="link-underline">À propos</a>
+              <a href="experience.html" class="link-underline">Expérience</a>
+              <a href="projects.html" class="link-underline">Projets</a>
+              <a href="contact.html" class="link-underline">Contact</a>
+              <a href="https://github.com/Imadlhannouni" target="_blank" rel="noreferrer" class="link-underline">GitHub</a>
+            </nav>
+            <a href="contact.html" class="md:inline-flex hidden ring-focus rounded-2xl px-4 py-2 text-sm font-medium bg-white/10 hover:bg-white/20">Me contacter</a>
+          </div>
+        </div>
+      </header>
+      <main class="mx-auto max-w-6xl px-4 py-16">
+        <h1 class="text-3xl md:text-4xl font-bold">Expérience</h1>
+        <ol class="mt-8 relative border-l border-white/10 ml-3">
+          <li class="mb-10 ml-6">
+            <span class="absolute -left-3 top-1 w-6 h-6 rounded-full bg-indigo-500/30 border border-white/20"></span>
+            <h3 class="font-semibold">Projets 42 & stages</h3>
+            <p class="text-sm text-zinc-400">2024 – 2026</p>
+            <p class="mt-2 text-zinc-300">Shell, réseaux, systèmes, C, et projets DevOps (CI/CD, Docker, K8s).</p>
+          </li>
+          <li class="mb-10 ml-6">
+            <span class="absolute -left-3 top-1 w-6 h-6 rounded-full bg-indigo-500/30 border border-white/20"></span>
+            <h3 class="font-semibold">Freelance / Labs</h3>
+            <p class="text-sm text-zinc-400">2025 – présent</p>
+            <p class="mt-2 text-zinc-300">Infra as Code, pipelines sur GitHub, monitoring et alerting.</p>
+          </li>
+        </ol>
+      </main>
+      <footer class="border-t border-white/5">
+        <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-400 flex flex-col md:flex-row items-center justify-between gap-2">
+          <p>© <span id="year"></span> Imad Lhannouni. Tous droits réservés.</p>
+          <div class="flex items-center gap-3">
+            <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="link-underline">Haut de page</a>
+            <span>·</span>
+            <a href="https://www.linkedin.com/in/imad-lhannouni-b2429a340/" target="_blank" rel="noreferrer" class="link-underline">LinkedIn</a>
+          </div>
+        </div>
+        <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+      </footer>
     </div>
-  </div>
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
-</footer>
+    <div id="lang-en" style="display:none">
+      <header class="sticky top-0 z-40">
+        <div class="glass">
+          <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="font-semibold tracking-tight text-zinc-100">Imad<span class="text-zinc-400">.dev</span></a>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-300">
+              <a href="about.html" class="link-underline">About</a>
+              <a href="experience.html" class="link-underline">Experience</a>
+              <a href="projects.html" class="link-underline">Projects</a>
+              <a href="contact.html" class="link-underline">Contact</a>
+              <a href="https://github.com/Imadlhannouni" target="_blank" rel="noreferrer" class="link-underline">GitHub</a>
+            </nav>
+            <a href="contact.html" class="md:inline-flex hidden ring-focus rounded-2xl px-4 py-2 text-sm font-medium bg-white/10 hover:bg-white/20">Contact me</a>
+          </div>
+        </div>
+      </header>
+      <main class="mx-auto max-w-6xl px-4 py-16">
+        <h1 class="text-3xl md:text-4xl font-bold">Experience</h1>
+        <ol class="mt-8 relative border-l border-white/10 ml-3">
+          <li class="mb-10 ml-6">
+            <span class="absolute -left-3 top-1 w-6 h-6 rounded-full bg-indigo-500/30 border border-white/20"></span>
+            <h3 class="font-semibold">42 Projects & Internships</h3>
+            <p class="text-sm text-zinc-400">2024 – 2026</p>
+            <p class="mt-2 text-zinc-300">Shell, networks, systems, C, and DevOps projects (CI/CD, Docker, K8s).</p>
+          </li>
+          <li class="mb-10 ml-6">
+            <span class="absolute -left-3 top-1 w-6 h-6 rounded-full bg-indigo-500/30 border border-white/20"></span>
+            <h3 class="font-semibold">Freelance / Labs</h3>
+            <p class="text-sm text-zinc-400">2025 – present</p>
+            <p class="mt-2 text-zinc-300">Infra as Code, GitHub pipelines, monitoring and alerting.</p>
+          </li>
+        </ol>
+      </main>
+      <footer class="border-t border-white/5">
+        <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-400 flex flex-col md:flex-row items-center justify-between gap-2">
+          <p>© <span id="year-en"></span> Imad Lhannouni. All rights reserved.</p>
+          <div class="flex items-center gap-3">
+            <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="link-underline">Back to top</a>
+            <span>·</span>
+            <a href="https://www.linkedin.com/in/imad-lhannouni-b2429a340/" target="_blank" rel="noreferrer" class="link-underline">LinkedIn</a>
+          </div>
+        </div>
+        <script>document.getElementById('year-en').textContent=new Date().getFullYear()</script>
+      </footer>
+    </div>
+    <script>
+      function setLang(lang) {
+        document.getElementById('lang-fr').style.display = lang === 'fr' ? '' : 'none';
+        document.getElementById('lang-en').style.display = lang === 'en' ? '' : 'none';
+      }
+    </script>
 </body>
 </html>

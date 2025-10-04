@@ -33,69 +33,151 @@
 
 </head>
 <body>
-<header class="sticky top-0 z-40">
-  <div class="glass">
-    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-      <a href="index.html" class="font-semibold tracking-tight text-zinc-100">Imad<span class="text-zinc-400">.dev</span></a>
-      <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-300">
-        <a href="about.html" class="link-underline">À propos</a>
-        <a href="experience.html" class="link-underline">Expérience</a>
-        <a href="projects.html" class="link-underline">Projets</a>
-        <a href="contact.html" class="link-underline">Contact</a>
-        <a href="https://github.com/Imadlhannouni" target="_blank" rel="noreferrer" class="link-underline">GitHub</a>
-      </nav>
-      <a href="contact.html" class="md:inline-flex hidden ring-focus rounded-2xl px-4 py-2 text-sm font-medium bg-white/10 hover:bg-white/20">Me contacter</a>
+    <div id="lang-select" class="flex items-center gap-3 p-4">
+      <button onclick="setLang('fr')" style="background:none;border:none;cursor:pointer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Français" width="32" height="20" />
+      </button>
+      <button onclick="setLang('en')" style="background:none;border:none;cursor:pointer">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English" width="32" height="20" />
+      </button>
     </div>
-  </div>
-</header>
-<main class="mx-auto max-w-6xl px-4 py-16">
-  <div class="flex items-center justify-between">
-    <h1 class="text-3xl md:text-4xl font-bold">Projets</h1>
-    <a class="text-sm text-zinc-400 hover:text-white link-underline" href="https://github.com/Imadlhannouni" target="_blank" rel="noreferrer">Voir tous mes repos →</a>
-  </div>
-  <div class="mt-8 grid md:grid-cols-3 gap-6">
-    <article class="glass rounded-3xl p-5 flex flex-col">
-      <div class="text-xs text-zinc-400">DevOps · CI/CD</div>
-      <h3 class="mt-2 text-lg font-semibold">Pipeline GitHub Actions</h3>
-      <p class="mt-2 text-sm text-zinc-300">Build/test/deploy containerisé avec cache, matrices et notifications.</p>
-      <div class="mt-auto pt-4 flex gap-2 text-xs text-zinc-400">
-        <span class="px-2 py-1 rounded-full bg-white/5">GitHub Actions</span>
-        <span class="px-2 py-1 rounded-full bg-white/5">Docker</span>
-        <span class="px-2 py-1 rounded-full bg-white/5">ArgoCD</span>
-      </div>
-    </article>
-    <article class="glass rounded-3xl p-5 flex flex-col">
-      <div class="text-xs text-zinc-400">Cloud · IaC</div>
-      <h3 class="mt-2 text-lg font-semibold">Infra EKS avec Terraform</h3>
-      <p class="mt-2 text-sm text-zinc-300">Cluster EKS + nodes autoscaling, ingress, monitoring Grafana/Prom.</p>
-      <div class="mt-auto pt-4 flex gap-2 text-xs text-zinc-400">
-        <span class="px-2 py-1 rounded-full bg-white/5">AWS</span>
-        <span class="px-2 py-1 rounded-full bg-white/5">Terraform</span>
-        <span class="px-2 py-1 rounded-full bg-white/5">Helm</span>
-      </div>
-    </article>
-    <article class="glass rounded-3xl p-5 flex flex-col">
-      <div class="text-xs text-zinc-400">SRE · Observabilité</div>
-      <h3 class="mt-2 text-lg font-semibold">Stack logging & metrics</h3>
-      <p class="mt-2 text-sm text-zinc-300">Loki + Prometheus + Grafana avec alertes basées sur SLO/SLI.</p>
-      <div class="mt-auto pt-4 flex gap-2 text-xs text-zinc-400">
-        <span class="px-2 py-1 rounded-full bg-white/5">Grafana</span>
-        <span class="px-2 py-1 rounded-full bg-white/5">Prometheus</span>
-        <span class="px-2 py-1 rounded-full bg-white/5">Loki</span>
-      </div>
-    </article>
-  </div>
-</main>
-<footer class="border-t border-white/5">
-  <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-400 flex flex-col md:flex-row items-center justify-between gap-2">
-    <p>© <span id="year"></span> Imad Lhannouni. Tous droits réservés.</p>
-    <div class="flex items-center gap-3">
-      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="link-underline">Haut de page</a>
-      <span>·</span>
-      <a href="https://www.linkedin.com/in/imad-lhannouni-b2429a340/" target="_blank" rel="noreferrer" class="link-underline">LinkedIn</a>
+    <div id="lang-fr">
+      <header class="sticky top-0 z-40">
+        <div class="glass">
+          <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="font-semibold tracking-tight text-zinc-100">Imad<span class="text-zinc-400">.dev</span></a>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-300">
+              <a href="about.html" class="link-underline">À propos</a>
+              <a href="experience.html" class="link-underline">Expérience</a>
+              <a href="projects.html" class="link-underline">Projets</a>
+              <a href="contact.html" class="link-underline">Contact</a>
+              <a href="https://github.com/Imadlhannouni" target="_blank" rel="noreferrer" class="link-underline">GitHub</a>
+            </nav>
+            <a href="contact.html" class="md:inline-flex hidden ring-focus rounded-2xl px-4 py-2 text-sm font-medium bg-white/10 hover:bg-white/20">Me contacter</a>
+          </div>
+        </div>
+      </header>
+      <main class="mx-auto max-w-6xl px-4 py-16">
+        <div class="flex items-center justify-between">
+          <h1 class="text-3xl md:text-4xl font-bold">Projets</h1>
+          <a class="text-sm text-zinc-400 hover:text-white link-underline" href="https://github.com/Imadlhannouni" target="_blank" rel="noreferrer">Voir tous mes repos →</a>
+        </div>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <article class="glass rounded-3xl p-5 flex flex-col">
+            <div class="text-xs text-zinc-400">DevOps · CI/CD</div>
+            <h3 class="mt-2 text-lg font-semibold">Pipeline GitHub Actions</h3>
+            <p class="mt-2 text-sm text-zinc-300">Build/test/deploy containerisé avec cache, matrices et notifications.</p>
+            <div class="mt-auto pt-4 flex gap-2 text-xs text-zinc-400">
+              <span class="px-2 py-1 rounded-full bg-white/5">GitHub Actions</span>
+              <span class="px-2 py-1 rounded-full bg-white/5">Docker</span>
+              <span class="px-2 py-1 rounded-full bg-white/5">ArgoCD</span>
+            </div>
+          </article>
+          <article class="glass rounded-3xl p-5 flex flex-col">
+            <div class="text-xs text-zinc-400">Cloud · IaC</div>
+            <h3 class="mt-2 text-lg font-semibold">Infra EKS avec Terraform</h3>
+            <p class="mt-2 text-sm text-zinc-300">Cluster EKS + nodes autoscaling, ingress, monitoring Grafana/Prom.</p>
+            <div class="mt-auto pt-4 flex gap-2 text-xs text-zinc-400">
+              <span class="px-2 py-1 rounded-full bg-white/5">AWS</span>
+              <span class="px-2 py-1 rounded-full bg-white/5">Terraform</span>
+              <span class="px-2 py-1 rounded-full bg-white/5">Helm</span>
+            </div>
+          </article>
+          <article class="glass rounded-3xl p-5 flex flex-col">
+            <div class="text-xs text-zinc-400">SRE · Observabilité</div>
+            <h3 class="mt-2 text-lg font-semibold">Stack logging & metrics</h3>
+            <p class="mt-2 text-sm text-zinc-300">Loki + Prometheus + Grafana avec alertes basées sur SLO/SLI.</p>
+            <div class="mt-auto pt-4 flex gap-2 text-xs text-zinc-400">
+              <span class="px-2 py-1 rounded-full bg-white/5">Grafana</span>
+              <span class="px-2 py-1 rounded-full bg-white/5">Prometheus</span>
+              <span class="px-2 py-1 rounded-full bg-white/5">Loki</span>
+            </div>
+          </article>
+        </div>
+      </main>
+      <footer class="border-t border-white/5">
+        <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-400 flex flex-col md:flex-row items-center justify-between gap-2">
+          <p>© <span id="year"></span> Imad Lhannouni. Tous droits réservés.</p>
+          <div class="flex items-center gap-3">
+            <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="link-underline">Haut de page</a>
+            <span>·</span>
+            <a href="https://www.linkedin.com/in/imad-lhannouni-b2429a340/" target="_blank" rel="noreferrer" class="link-underline">LinkedIn</a>
+          </div>
+        </div>
+        <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+      </footer>
     </div>
-  </div>
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
-</footer>
+    <div id="lang-en" style="display:none">
+      <header class="sticky top-0 z-40">
+        <div class="glass">
+          <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="font-semibold tracking-tight text-zinc-100">Imad<span class="text-zinc-400">.dev</span></a>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-300">
+              <a href="about.html" class="link-underline">About</a>
+              <a href="experience.html" class="link-underline">Experience</a>
+              <a href="projects.html" class="link-underline">Projects</a>
+              <a href="contact.html" class="link-underline">Contact</a>
+              <a href="https://github.com/Imadlhannouni" target="_blank" rel="noreferrer" class="link-underline">GitHub</a>
+            </nav>
+            <a href="contact.html" class="md:inline-flex hidden ring-focus rounded-2xl px-4 py-2 text-sm font-medium bg-white/10 hover:bg-white/20">Contact me</a>
+          </div>
+        </div>
+      </header>
+      <main class="mx-auto max-w-6xl px-4 py-16">
+        <div class="flex items-center justify-between">
+          <h1 class="text-3xl md:text-4xl font-bold">Projects</h1>
+          <a class="text-sm text-zinc-400 hover:text-white link-underline" href="https://github.com/Imadlhannouni" target="_blank" rel="noreferrer">See all my repos →</a>
+        </div>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <article class="glass rounded-3xl p-5 flex flex-col">
+            <div class="text-xs text-zinc-400">DevOps · CI/CD</div>
+            <h3 class="mt-2 text-lg font-semibold">GitHub Actions Pipeline</h3>
+            <p class="mt-2 text-sm text-zinc-300">Build/test/deploy containerized with cache, matrices and notifications.</p>
+            <div class="mt-auto pt-4 flex gap-2 text-xs text-zinc-400">
+              <span class="px-2 py-1 rounded-full bg-white/5">GitHub Actions</span>
+              <span class="px-2 py-1 rounded-full bg-white/5">Docker</span>
+              <span class="px-2 py-1 rounded-full bg-white/5">ArgoCD</span>
+            </div>
+          </article>
+          <article class="glass rounded-3xl p-5 flex flex-col">
+            <div class="text-xs text-zinc-400">Cloud · IaC</div>
+            <h3 class="mt-2 text-lg font-semibold">EKS Infra with Terraform</h3>
+            <p class="mt-2 text-sm text-zinc-300">EKS cluster + autoscaling nodes, ingress, Grafana/Prom monitoring.</p>
+            <div class="mt-auto pt-4 flex gap-2 text-xs text-zinc-400">
+              <span class="px-2 py-1 rounded-full bg-white/5">AWS</span>
+              <span class="px-2 py-1 rounded-full bg-white/5">Terraform</span>
+              <span class="px-2 py-1 rounded-full bg-white/5">Helm</span>
+            </div>
+          </article>
+          <article class="glass rounded-3xl p-5 flex flex-col">
+            <div class="text-xs text-zinc-400">SRE · Observability</div>
+            <h3 class="mt-2 text-lg font-semibold">Logging & Metrics Stack</h3>
+            <p class="mt-2 text-sm text-zinc-300">Loki + Prometheus + Grafana with SLO/SLI-based alerts.</p>
+            <div class="mt-auto pt-4 flex gap-2 text-xs text-zinc-400">
+              <span class="px-2 py-1 rounded-full bg-white/5">Grafana</span>
+              <span class="px-2 py-1 rounded-full bg-white/5">Prometheus</span>
+              <span class="px-2 py-1 rounded-full bg-white/5">Loki</span>
+            </div>
+          </article>
+        </div>
+      </main>
+      <footer class="border-t border-white/5">
+        <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-400 flex flex-col md:flex-row items-center justify-between gap-2">
+          <p>© <span id="year-en"></span> Imad Lhannouni. All rights reserved.</p>
+          <div class="flex items-center gap-3">
+            <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="link-underline">Back to top</a>
+            <span>·</span>
+            <a href="https://www.linkedin.com/in/imad-lhannouni-b2429a340/" target="_blank" rel="noreferrer" class="link-underline">LinkedIn</a>
+          </div>
+        </div>
+        <script>document.getElementById('year-en').textContent=new Date().getFullYear()</script>
+      </footer>
+    </div>
+    <script>
+      function setLang(lang) {
+        document.getElementById('lang-fr').style.display = lang === 'fr' ? '' : 'none';
+        document.getElementById('lang-en').style.display = lang === 'en' ? '' : 'none';
+      }
+    </script>
 </body>
 </html>
